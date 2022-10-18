@@ -33,9 +33,9 @@ class MybatisPlus01ApplicationTests {
 		qw.select("max(releaseTime) as max");
 //		qw.select("min(release_time) min");
 
-		List<Map<String, Object>> maps = animeInfoDao.selectMaps(qw);
+		List<AnimeInfo> animeInfos = animeInfoDao.selectList(qw);
 
-		System.out.println(maps);
+		animeInfos.forEach(System.out::println);
 
 
 	}
