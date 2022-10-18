@@ -32,7 +32,9 @@ class MybatisPlus01ApplicationTests {
 
 		List<AnimeInfo> animeInfos = animeInfoDao.selectList(qw);
 
-		animeInfos.forEach(System.out::println);
+		AnimeInfo animeInfo = animeInfos.get(0);
+
+		System.out.println(animeInfo);
 
 
 	}
