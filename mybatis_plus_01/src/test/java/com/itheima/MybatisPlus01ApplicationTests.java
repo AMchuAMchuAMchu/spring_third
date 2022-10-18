@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.dao.AnimeInfoDao;
 import com.itheima.pojo.AnimeInfo;
 import com.itheima.pojo.querywrapper.QueryAnime;
+import org.apache.logging.log4j.util.Strings;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +23,20 @@ class MybatisPlus01ApplicationTests {
 
 
 
+	@Test
+	void testLike01(){
+
+		LambdaQueryWrapper<AnimeInfo> lqw = new LambdaQueryWrapper<>();
+
+		AnimeInfo animeInfo = new AnimeInfo();
+		animeInfo.setName("之");
+
+		LambdaQueryWrapper<AnimeInfo> like = lqw.like(Strings.isEmpty(animeInfo.getName()), AnimeInfo::getName, animeInfo.getName());
+
+		System.out.println(like);
+
+
+	}
 
 
 
