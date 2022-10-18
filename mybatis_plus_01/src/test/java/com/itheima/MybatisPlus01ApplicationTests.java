@@ -39,7 +39,7 @@ class MybatisPlus01ApplicationTests {
 
 		List<Map<String, Object>> maps = animeInfoDao.selectMaps(qw);
 
-		System.out.println(maps);
+		maps.forEach(System.out::println);
 
 
 	}
