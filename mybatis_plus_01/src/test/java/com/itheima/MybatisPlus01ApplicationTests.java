@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.TestPropertySources;
 
+import javax.crypto.ExemptionMechanismException;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +23,21 @@ class MybatisPlus01ApplicationTests {
 
 	@Autowired
 	private AnimeInfoDao animeInfoDao;
+
+
+
+	@Test
+	void testSelectForOne(){
+
+		LambdaQueryWrapper<AnimeInfo> lqw = new LambdaQueryWrapper<>();
+
+		lqw.eq(AnimeInfo::getName,"刀剑神域Alicization");
+
+		List<AnimeInfo> animeInfos = animeInfoDao.selectList(lqw);
+
+		animeInfos.forEach(System.out::println);
+
+	}
 
 
 	@Test
