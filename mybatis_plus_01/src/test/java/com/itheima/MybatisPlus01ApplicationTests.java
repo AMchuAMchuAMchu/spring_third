@@ -1,5 +1,6 @@
 package com.itheima;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.dao.AnimeInfoDao;
 import com.itheima.pojo.AnimeInfo;
@@ -17,6 +18,21 @@ class MybatisPlus01ApplicationTests {
 
 	@Autowired
 	private AnimeInfoDao animeInfoDao;
+
+
+
+
+	@Test
+	void testSelectByAge(){
+
+		LambdaQueryWrapper<AnimeInfo> lqw = new LambdaQueryWrapper<>();
+
+		lqw.le(AnimeInfo::getReleaseTime,2020);
+
+		List<AnimeInfo> animeInfos = animeInfoDao.selectList(lqw);
+		animeInfos.forEach(System.out::println);
+
+	}
 
 	@Test
 	void testUpdate(){
@@ -38,7 +54,6 @@ class MybatisPlus01ApplicationTests {
 		int i = animeInfoDao.deleteById(180);
 
 		System.out.println(i>0?"true":"false");
-
 
 	}
 
