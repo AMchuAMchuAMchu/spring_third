@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.TestPropertySources;
 
 import java.util.List;
 
@@ -16,6 +17,16 @@ class MybatisPlus01ApplicationTests {
 
 	@Autowired
 	private AnimeInfoDao animeInfoDao;
+
+	@Test
+	void testDelete(){
+
+		int i = animeInfoDao.deleteById(180);
+
+		System.out.println(i>0?"true":"false");
+
+
+	}
 
 	@Test
 	void insertOne(){
