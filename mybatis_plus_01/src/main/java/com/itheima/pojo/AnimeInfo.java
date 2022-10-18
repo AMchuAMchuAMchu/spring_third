@@ -27,4 +27,6 @@ public class AnimeInfo {
 
     private Integer id;
 
+    private String online;
+
 }
