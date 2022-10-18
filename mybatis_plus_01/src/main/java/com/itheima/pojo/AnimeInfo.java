@@ -18,7 +18,7 @@ public class AnimeInfo {
 
     @TableField("name")
     private String name;
-
+//    @TableField(select = false)
     private Integer releaseTime;
 
     private String character01;
