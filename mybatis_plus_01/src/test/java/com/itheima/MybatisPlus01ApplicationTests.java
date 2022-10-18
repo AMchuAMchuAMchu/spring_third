@@ -31,9 +31,11 @@ class MybatisPlus01ApplicationTests {
 		AnimeInfo animeInfo = new AnimeInfo();
 		animeInfo.setName("之");
 
-		LambdaQueryWrapper<AnimeInfo> like = lqw.like(Strings.isEmpty(animeInfo.getName()), AnimeInfo::getName, animeInfo.getName());
+		lqw.like(Strings.isEmpty(animeInfo.getName()), AnimeInfo::getName, animeInfo.getName());
 
-		System.out.println(like);
+		List<AnimeInfo> animeInfos = animeInfoDao.selectList(lqw);
+
+		animeInfos.forEach(System.out::println);
 
 
 	}
