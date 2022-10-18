@@ -13,10 +13,10 @@ import lombok.Data;
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
 @Data
-@TableName("anime_info")
+//@TableName("anime_info")
 public class AnimeInfo {
 
-    @TableField("name")
+//    @TableField("name")
     private String name;
 //    @TableField(select = false)
     private Integer releaseTime;
@@ -27,7 +27,7 @@ public class AnimeInfo {
 
     private Integer id;
 
-    @TableField(exist = false)
-    private String online;
+//    @TableField(exist = false)
+//    private String online;
 
 }
