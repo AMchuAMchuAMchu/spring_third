@@ -14,6 +14,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.TestPropertySources;
 
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 class MybatisPlus01ApplicationTests {
@@ -30,11 +31,9 @@ class MybatisPlus01ApplicationTests {
 
 		qw.select("count(*) count");
 
-		List<AnimeInfo> animeInfos = animeInfoDao.selectList(qw);
+		List<Map<String, Object>> maps = animeInfoDao.selectMaps(qw);
 
-		AnimeInfo animeInfo = animeInfos.get(0);
-
-		System.out.println(animeInfo);
+		System.out.println(maps);
 
 
 	}
