@@ -13,7 +13,7 @@ import lombok.Data;
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
 @Data
-@TableName("anime_infoinfo")
+@TableName("anime_info")
 public class AnimeInfo {
 
     @TableField("name")
