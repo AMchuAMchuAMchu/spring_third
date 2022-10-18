@@ -1,5 +1,7 @@
 package com.itheima.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -11,8 +13,10 @@ import lombok.Data;
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
 @Data
+@TableName("anime_infoinfo")
 public class AnimeInfo {
 
+    @TableField("name")
     private String name;
 
     private Integer releaseTime;
