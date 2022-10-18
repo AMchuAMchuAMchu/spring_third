@@ -32,7 +32,8 @@ class MybatisPlus01ApplicationTests {
 //		qw.select("count(*) count");
 //		qw.select("max(release_time) max");
 //		qw.select("min(release_time) min");
-		qw.select("sum(release_time) release_time");
+//		qw.select("sum(release_time) release_time");
+		qw.select("avg(release_time) release_time");
 
 		List<Map<String, Object>> maps = animeInfoDao.selectMaps(qw);
 
