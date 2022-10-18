@@ -23,13 +23,15 @@ class MybatisPlus01ApplicationTests {
 
 
 
+
 	@Test
 	void testSelectByAge(){
 
 		LambdaQueryWrapper<AnimeInfo> lqw = new LambdaQueryWrapper<>();
 
 //		lqw.le(AnimeInfo::getReleaseTime,2020);
-		lqw.ge(AnimeInfo::getReleaseTime,2020);
+//		lqw.ge(AnimeInfo::getReleaseTime,2020);
+		lqw.ge(AnimeInfo::getReleaseTime,2010).le(AnimeInfo::getReleaseTime,2018);
 
 		List<AnimeInfo> animeInfos = animeInfoDao.selectList(lqw);
 		animeInfos.forEach(System.out::println);
