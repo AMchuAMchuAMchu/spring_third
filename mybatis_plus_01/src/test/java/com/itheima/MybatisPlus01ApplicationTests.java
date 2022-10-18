@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.dao.AnimeInfoDao;
 import com.itheima.pojo.AnimeInfo;
+import com.itheima.pojo.querywrapper.QueryAnime;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,10 +30,16 @@ class MybatisPlus01ApplicationTests {
 
 		LambdaQueryWrapper<AnimeInfo> lqw = new LambdaQueryWrapper<>();
 
+		QueryAnime queryAnime = new QueryAnime();
+		queryAnime.setReleaseTime(2018);
+		queryAnime.setReleaseTime02(2020);
+
 //		lqw.le(AnimeInfo::getReleaseTime,2020);
 //		lqw.ge(AnimeInfo::getReleaseTime,2020);
 //		lqw.ge(AnimeInfo::getReleaseTime,2010).le(AnimeInfo::getReleaseTime,2018);
-		lqw.le(AnimeInfo::getReleaseTime,2012).or().gt(AnimeInfo::getReleaseTime,2018);
+//		lqw.le(AnimeInfo::getReleaseTime,2012).or().gt(AnimeInfo::getReleaseTime,2018);
+		lqw.le(null!=queryAnime.getReleaseTime02(),AnimeInfo::getReleaseTime,queryAnime.getReleaseTime02()).or().gt(null!= queryAnime.getReleaseTime(),AnimeInfo::getReleaseTime,queryAnime.getReleaseTime());
+
 
 		List<AnimeInfo> animeInfos = animeInfoDao.selectList(lqw);
 		animeInfos.forEach(System.out::println);
