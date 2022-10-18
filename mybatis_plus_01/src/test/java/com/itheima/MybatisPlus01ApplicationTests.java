@@ -19,6 +19,21 @@ class MybatisPlus01ApplicationTests {
 	private AnimeInfoDao animeInfoDao;
 
 	@Test
+	void testUpdate(){
+
+		AnimeInfo animeInfo = new AnimeInfo();
+		animeInfo.setName("刀剑神域Alicization");
+		animeInfo.setReleaseTime(2018);
+		animeInfo.setId(28);
+		animeInfo.setCharacter01("Alici爱丽丝茅野爱衣");
+		animeInfo.setCharacter02("Eugeo尤吉欧");
+		int i = animeInfoDao.updateById(animeInfo);
+		System.out.println(i>0?"true":"false");
+
+
+	}
+
+	@Test
 	void testDelete(){
 
 		int i = animeInfoDao.deleteById(180);
