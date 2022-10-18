@@ -31,7 +31,8 @@ class MybatisPlus01ApplicationTests {
 
 //		lqw.le(AnimeInfo::getReleaseTime,2020);
 //		lqw.ge(AnimeInfo::getReleaseTime,2020);
-		lqw.ge(AnimeInfo::getReleaseTime,2010).le(AnimeInfo::getReleaseTime,2018);
+//		lqw.ge(AnimeInfo::getReleaseTime,2010).le(AnimeInfo::getReleaseTime,2018);
+		lqw.le(AnimeInfo::getReleaseTime,2012).or().ge(AnimeInfo::getReleaseTime,2018);
 
 		List<AnimeInfo> animeInfos = animeInfoDao.selectList(lqw);
 		animeInfos.forEach(System.out::println);
