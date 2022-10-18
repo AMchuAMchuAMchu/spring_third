@@ -22,6 +22,18 @@ class MybatisPlus01ApplicationTests {
 	private AnimeInfoDao animeInfoDao;
 
 
+	@Test
+	void testSelectColumn(){
+
+		LambdaQueryWrapper<AnimeInfo> lqw = new LambdaQueryWrapper<>();
+
+		lqw.select(AnimeInfo::getName,AnimeInfo::getCharacter02);
+
+		List<AnimeInfo> animeInfos = animeInfoDao.selectList(lqw);
+
+		animeInfos.forEach(System.out::println);
+
+	}
 
 	@Test
 	void testLike01(){
