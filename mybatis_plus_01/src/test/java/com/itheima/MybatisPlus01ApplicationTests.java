@@ -25,6 +25,22 @@ class MybatisPlus01ApplicationTests {
 	private AnimeInfoDao animeInfoDao;
 
 
+
+	@Test
+	void testOrder(){
+
+		LambdaQueryWrapper<AnimeInfo> lqw = new LambdaQueryWrapper<>();
+
+
+		lqw.orderBy(true,false,AnimeInfo::getReleaseTime);
+
+		List<AnimeInfo> animeInfos = animeInfoDao.selectList(lqw);
+
+		animeInfos.forEach(System.out::println);
+
+	}
+
+
 	@Test
 	void testBetween(){
 
