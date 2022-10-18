@@ -30,8 +30,9 @@ class MybatisPlus01ApplicationTests {
 		QueryWrapper<AnimeInfo> qw = new QueryWrapper<>();
 
 //		qw.select("count(*) count");
-		qw.select("max(release_time) max");
+//		qw.select("max(release_time) max");
 //		qw.select("min(release_time) min");
+		qw.select("sum(release_time) release_time");
 
 		List<Map<String, Object>> maps = animeInfoDao.selectMaps(qw);
 
