@@ -30,7 +30,6 @@ class MybatisPlus01ApplicationTests {
 		int i = animeInfoDao.updateById(animeInfo);
 		System.out.println(i>0?"true":"false");
 
-
 	}
 
 	@Test
