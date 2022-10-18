@@ -1,6 +1,7 @@
 package com.itheima;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.dao.AnimeInfoDao;
 import com.itheima.pojo.AnimeInfo;
@@ -21,6 +22,20 @@ class MybatisPlus01ApplicationTests {
 	@Autowired
 	private AnimeInfoDao animeInfoDao;
 
+
+	@Test
+	void testAggregation(){
+
+		QueryWrapper<AnimeInfo> qw = new QueryWrapper<>();
+
+		qw.select("count(*) count");
+
+		List<AnimeInfo> animeInfos = animeInfoDao.selectList(qw);
+
+		animeInfos.forEach(System.out::println);
+
+
+	}
 
 	@Test
 	void testSelectColumn(){
