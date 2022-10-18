@@ -27,6 +27,7 @@ public class AnimeInfo {
 
     private Integer id;
 
+    @TableField(exist = false)
     private String online;
 
 }
