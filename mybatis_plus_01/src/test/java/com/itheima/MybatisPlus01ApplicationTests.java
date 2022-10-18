@@ -6,6 +6,7 @@ import com.itheima.pojo.AnimeInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 
 import java.util.List;
 
@@ -15,6 +16,19 @@ class MybatisPlus01ApplicationTests {
 
 	@Autowired
 	private AnimeInfoDao animeInfoDao;
+
+	@Test
+	void insertOne(){
+
+		AnimeInfo animeInfo = new AnimeInfo();
+		animeInfo.setName("刀剑神域Alicization");
+		animeInfo.setReleaseTime(2018);
+		animeInfo.setId(28);
+		animeInfo.setCharacter01("Alici爱丽丝");
+		animeInfo.setCharacter02("Eugeo尤吉欧");
+		int insert = animeInfoDao.insert(animeInfo);
+		System.out.println(insert>0?"true":"false");
+	}
 
 	@Test
 	void testPage(){
