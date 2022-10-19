@@ -29,7 +29,7 @@ class MybatisPlus01ApplicationTests {
 	@Test
 	void testDeleteId(){
 
-		int i = animeInfoDao.deleteById(1);
+		int i = animeInfoDao.deleteById(2);
 
 
 

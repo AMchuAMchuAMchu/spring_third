@@ -30,7 +30,7 @@ public class AnimeInfo {
 
 //    @TableField(exist = false)
 //    private String online;
-    @TableLogic(value = "0",delval = "1")
+//    @TableLogic(value = "0",delval = "1")
     private Integer deleteId;
 
 }
