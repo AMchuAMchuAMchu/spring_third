@@ -46,8 +46,8 @@ public class MybatisPlusConfig {
         autoGenerator.setPackageInfo(packageInfo);
 //策略设置
         StrategyConfig strategyConfig = new StrategyConfig();
-        strategyConfig.setInclude("tbl_user"); //设置当前参与生成的表名，参数为可
-        strategyConfig.setTablePrefix("tbl_"); //设置数据库表的前缀名称，模块名 =
+        strategyConfig.setInclude("animeInfo"); //设置当前参与生成的表名，参数为可
+//        strategyConfig.setTablePrefix("tbl_"); //设置数据库表的前缀名称，模块名 =
         strategyConfig.setRestControllerStyle(true); //设置是否启用Rest风格
         strategyConfig.setVersionFieldName("version"); //设置乐观锁字段名
         strategyConfig.setLogicDeleteFieldName("deleted"); //设置逻辑删除字段名
