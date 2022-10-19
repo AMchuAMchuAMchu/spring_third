@@ -16,5 +16,3 @@ mybatis-plus:
     banner: false
     db-config:
       id-type: assign_id
-      logic-delete-value: 1
-      logic-not-delete-value: 0

@@ -29,10 +29,8 @@ class MybatisPlus01ApplicationTests {
 	@Test
 	void testDeleteId(){
 
-		AnimeInfo animeInfo = new AnimeInfo();
-		animeInfo.setDeleteId(1);
-		animeInfo.setId(0);
-		int i = animeInfoDao.deleteById(animeInfo);
+		int i = animeInfoDao.deleteById(1);
+
 
 
 	}
