@@ -34,4 +34,6 @@ public class AnimeInfo {
 //    @TableField(exist = false)
 //    private String online;
 
+    private Integer deleteId;
+
 }

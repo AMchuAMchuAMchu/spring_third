@@ -27,6 +27,25 @@ class MybatisPlus01ApplicationTests {
 	private AnimeInfoDao animeInfoDao;
 
 	@Test
+	void testDeleteId(){
+
+		AnimeInfo animeInfo = new AnimeInfo();
+		animeInfo.setDeleteId(1);
+		animeInfo.setId(0);
+		int i = animeInfoDao.deleteById(animeInfo);
+
+
+	}
+
+
+	@Test
+	void testSelectDeleteId(){
+		List<AnimeInfo> animeInfos = animeInfoDao.selectList(null);
+		animeInfos.forEach(System.out::println);
+
+	}
+
+	@Test
 	void testBatchSelect(){
 		ArrayList<Integer> list = new ArrayList<>();
 		list.add(1);
