@@ -27,7 +27,8 @@ public class AnimeInfo {
 
     private String character02;
 
-    @TableId(type = IdType.AUTO)
+//    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.ASSIGN_ID)
     private Integer id;
 
 //    @TableField(exist = false)
