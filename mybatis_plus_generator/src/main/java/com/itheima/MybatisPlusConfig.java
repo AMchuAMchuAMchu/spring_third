@@ -32,7 +32,7 @@ public class MybatisPlusConfig {
         autoGenerator.setDataSource(dataSource);
         GlobalConfig globalConfig = new GlobalConfig();
         globalConfig.setOutputDir("D:\\seldom\\rd\\Java_ProjectAll\\ssm\\spring_third\\mybatis_plus_generator\\src\\main\\java\\"); //设置代码生成位置
-                globalConfig.setOpen(false); //设置生成完毕后是否打开生成代码所在的目录
+        globalConfig.setOpen(false); //设置生成完毕后是否打开生成代码所在的目录
         globalConfig.setAuthor("AMchu"); //设置作者
         globalConfig.setFileOverride(true); //设置是否覆盖原始生成的文件
         globalConfig.setMapperName("AnimeInfoDao"); //设置数据层接口名，%s为占位符，指
