@@ -14,6 +14,8 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.TestPropertySources;
 
 import javax.crypto.ExemptionMechanismException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +25,21 @@ class MybatisPlus01ApplicationTests {
 
 	@Autowired
 	private AnimeInfoDao animeInfoDao;
+
+
+	@Test
+	void testBatchDelete(){
+
+		ArrayList<Integer> list = new ArrayList<>();
+
+		list.add(-901660670);
+		list.add(788598786);
+		list.add(788598787);
+		int i = animeInfoDao.deleteBatchIds(list);
+
+
+
+	}
 
 
 
@@ -35,7 +52,7 @@ class MybatisPlus01ApplicationTests {
 		animeInfo.setCharacter02("Eugeo");
 		animeInfo.setReleaseTime(2022);
 		int insert = animeInfoDao.insert(animeInfo);
-		
+
 
 
 	}
