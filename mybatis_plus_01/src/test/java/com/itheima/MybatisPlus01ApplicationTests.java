@@ -26,6 +26,18 @@ class MybatisPlus01ApplicationTests {
 	@Autowired
 	private AnimeInfoDao animeInfoDao;
 
+
+	@Test
+	void testVersion(){
+
+		AnimeInfo animeInfo = new AnimeInfo();
+		animeInfo.setId(32);
+		animeInfo.setVersion(1);
+		animeInfo.setName("刀剑神域SAO伊藤智彦...");
+		animeInfoDao.updateById(animeInfo);
+
+	}
+
 	@Test
 	void testDeleteId(){
 

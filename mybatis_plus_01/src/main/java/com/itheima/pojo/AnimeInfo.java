@@ -33,4 +33,7 @@ public class AnimeInfo {
 //    @TableLogic(value = "0",delval = "1")
     private Integer deleteId;
 
+    @Version
+    private Integer version;
+
 }
