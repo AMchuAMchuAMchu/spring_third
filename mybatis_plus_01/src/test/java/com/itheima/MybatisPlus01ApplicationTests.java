@@ -27,6 +27,20 @@ class MybatisPlus01ApplicationTests {
 
 
 	@Test
+	void testInsert(){
+
+		AnimeInfo animeInfo = new AnimeInfo();
+		animeInfo.setName("Alicization...");
+		animeInfo.setCharacter01("Alicization");
+		animeInfo.setCharacter02("Eugeo");
+		animeInfo.setReleaseTime(2022);
+		int insert = animeInfoDao.insert(animeInfo);
+		
+
+
+	}
+
+	@Test
 	void testOrder(){
 
 		LambdaQueryWrapper<AnimeInfo> lqw = new LambdaQueryWrapper<>();
