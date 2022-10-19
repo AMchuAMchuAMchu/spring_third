@@ -26,6 +26,18 @@ class MybatisPlus01ApplicationTests {
 	@Autowired
 	private AnimeInfoDao animeInfoDao;
 
+	@Test
+	void testBatchSelect(){
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		List<AnimeInfo> animeInfos = animeInfoDao.selectBatchIds(list);
+
+		animeInfos.forEach(System.out::println);
+
+	}
+
 
 	@Test
 	void testBatchDelete(){
@@ -36,6 +48,8 @@ class MybatisPlus01ApplicationTests {
 		list.add(788598786);
 		list.add(788598787);
 		int i = animeInfoDao.deleteBatchIds(list);
+
+
 
 
 
